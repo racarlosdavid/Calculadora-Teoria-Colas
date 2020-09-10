@@ -2,13 +2,11 @@ export class MM1Finito {
     lambda:number;
     mu:number;
     N:number;
-    K:number
 
-    constructor(lambda:number, mu:number, N:number, K:number){
+    constructor(lambda:number, mu:number, N:number){
         this.lambda = lambda;
         this.mu = mu;
         this.N = N;
-        this.K = K;
     }
 
     capacidad():string{

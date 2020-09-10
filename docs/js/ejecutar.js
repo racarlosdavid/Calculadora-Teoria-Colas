@@ -134,9 +134,9 @@ function mm1_finito(){
         let mm1_f_λ = Number(document.getElementById("mm1_f_λ").value);
         let mm1_f_μ = Number(document.getElementById("mm1_f_μ").value);  
         let mm1_f_N = Number(document.getElementById("mm1_f_N").value);     
-        let mm1_f_K = Number(document.getElementById("mm1_f_K").value);
+        let mm1_f_n = document.getElementById("mm1_f_n").value;
        
-        let modelo_mm1finito = new MM1Finito(mm1_f_λ,mm1_f_μ,mm1_f_N,mm1_f_K);
+        let modelo_mm1finito = new MM1Finito(mm1_f_λ,mm1_f_μ,mm1_f_N);
 
         let salida = "";
         salida += " Caracteristicas Operativas de Sistema - MODELO MM1 Finito\n";
@@ -146,7 +146,10 @@ function mm1_finito(){
         salida += " L = "+modelo_mm1finito.L()+"\n";
         salida += " Wq = "+modelo_mm1finito.Wq()+"\n";
         salida += " W = "+modelo_mm1finito.W()+"\n";
-        salida += " Pn = "+modelo_mm1finito.Pn(4)+"\n"; //Le mando la n unidads que quiero saber la probabilidad que que esten en el sistema
+        if (mm1_f_n!="") {
+            mm1_f_n = Number(document.getElementById("mm1_f_n").value);
+            salida += " Pn = "+modelo_mm1finito.Pn(mm1_f_n)+"\n"; //Le mando la n unidades que quiero saber la probabilidad que esten en el sistema
+        }
         salida += " Pw = "+modelo_mm1finito.Pw()+"\n";
         salida += "\n";
 

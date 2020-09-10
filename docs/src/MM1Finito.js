@@ -1,9 +1,8 @@
 class MM1Finito {
-    constructor(lambda, mu, N, K) {
+    constructor(lambda, mu, N) {
         this.lambda = lambda;
         this.mu = mu;
         this.N = N;
-        this.K = K;
     }
     capacidad() {
         if (this.lambda < this.mu)
