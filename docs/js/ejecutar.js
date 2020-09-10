@@ -153,7 +153,41 @@ function mm1_finito(){
         salida += " Pw = "+modelo_mm1finito.Pw()+"\n";
         salida += "\n";
 
-        let tempo = textMap.get("code_mmm1_f");    //Obtengo el textarea de la pestaña
+        let tempo = textMap.get("code_mgk_b");    //Obtengo el textarea de la pestaña
+        tempo.setValue(salida);
+       
+    }
+    catch (err) {
+        console.log(err);
+      
+    }
+
+}
+
+
+function mgk_bloqueado(){
+    
+    console.log("-> Modelo M/G/K BLOQUEADO");
+    try { 
+        
+        let mgk_b_λ = Number(document.getElementById("mgk_b_λ").value);
+        let mgk_b_μ = Number(document.getElementById("mgk_b_μ").value);  
+        let mgk_b_K = Number(document.getElementById("mgk_b_K").value);     
+        let mgk_b_j = document.getElementById("mgk_b_j").value;
+       
+        let modelo_mgkbloqueado= new MGKBloqueado(mgk_b_λ,mgk_b_μ,mgk_b_K);
+
+        let salida = "";
+        salida += "  Caracteristicas Operativas de Sistema - MODELO MGK BLOQUEADO\n";
+        salida += "  El sistema tiene capacidad: "+modelo_mgkbloqueado.capacidad()+"\n";
+        salida += "  ρ = "+modelo_mgkbloqueado.ro()+"\n";
+        if (mgk_b_j!="") {
+            mgk_b_j = Number(document.getElementById("mgk_b_j").value);
+            salida += "  Pj = "+modelo_mgkbloqueado.Pj(mgk_b_j)+"\n"; 
+        }
+        salida += "\n";
+
+        let tempo = textMap.get("code_mgk_b");    //Obtengo el textarea de la pestaña
         tempo.setValue(salida);
        
     }

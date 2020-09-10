@@ -27,6 +27,7 @@
     <script src="src/MMK.js"></script>
     <script src="src/MG1.js"></script>
     <script src="src/MM1Finito.js"></script>
+    <script src="src/MGKBloqueado.js"></script>
 
 </head>
 <body onload="setear()">
@@ -39,6 +40,7 @@
   <button class="tablinksR" onclick="mostarPestaniaR(event, 'MMK')">M/M/K</button>
   <button class="tablinksR" onclick="mostarPestaniaR(event, 'MG1')">M/G/1</button>
   <button class="tablinksR" onclick="mostarPestaniaR(event, 'MM1F')">M/M/1 Finito</button>
+  <button class="tablinksR" onclick="mostarPestaniaR(event, 'MGK')">M/G/K Bloqueado</button>
 </div>
 
 <div id="MM1" class="tabcontentR">
@@ -174,6 +176,42 @@
           <h4>Resultados</h4>
         </div>
         <textarea class="codemirror-textarea" name="" id="code_mmm1_f" cols="30" rows="13">
+          
+        </textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="MGK" class="tabcontentR">
+  <div class="row">
+    <div class="col-4 mt-3">
+      <div class="card">
+        <div class="card-header">
+          <h4>Variables </h4>
+        </div>
+        <div>
+          <form>
+            <label for="mgk_b_λ">λ:</label><br>
+            <input type="text" id="mgk_b_λ" name="mgk_b_λ"><br>
+            <label for="mgk_b_μ">μ:</label><br>
+            <input type="text" id="mgk_b_μ" name="mgk_b_μ"><br>
+            <label for="mgk_b_K">k:</label><br>
+            <input type="text" id="mgk_b_K" name="mgk_b_K"><br>
+            <label for="mgk_b_j">j: para calcular Pj</label><br>
+            <input type="text" id="mgk_b_j" name="mgk_b_j"><br> 
+            <button type="button" class="m-2 btn btn-success btn-lg" onclick="mgk_bloqueado()">Calcular M/G/K Bloqueado </button> 
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-7 mt-3">
+      <div class="card">
+        <div class="card-header">
+          <h4>Resultados</h4>
+        </div>
+        <textarea class="codemirror-textarea" name="" id="code_mgk_b" cols="30" rows="13">
           
         </textarea>
       </div>
