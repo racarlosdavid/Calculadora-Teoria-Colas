@@ -22,10 +22,10 @@ export class MMK {
     p0():number{
         let sumatoria = 0
         for (let i = 0; i < this.K; i++) {
-            sumatoria += ( (this.lambda / this.mu) ** i) / this.factorial(i)
+            sumatoria += (( (this.lambda/this.mu) ** i) / this.factorial(i));
         }    
         
-        return 1/(sumatoria + (((this.lambda/this.mu) ** this.K) / this.factorial(this.K)) * ((this.K*this.mu)/this.K*this.mu-this.lambda));
+        return 1/(sumatoria + ((((this.lambda/this.mu) ** this.K) / this.factorial(this.K)) * ((this.K*this.mu)/((this.K*this.mu)-this.lambda))));
     }
     
     factorial(n:number):number {

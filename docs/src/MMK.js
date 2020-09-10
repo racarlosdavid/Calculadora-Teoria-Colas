@@ -15,9 +15,9 @@ class MMK {
     p0() {
         let sumatoria = 0;
         for (let i = 0; i < this.K; i++) {
-            sumatoria += (Math.pow((this.lambda / this.mu), i)) / this.factorial(i);
+            sumatoria += ((Math.pow((this.lambda / this.mu), i)) / this.factorial(i));
         }
-        return 1 / (sumatoria + ((Math.pow((this.lambda / this.mu), this.K)) / this.factorial(this.K)) * ((this.K * this.mu) / this.K * this.mu - this.lambda));
+        return 1 / (sumatoria + (((Math.pow((this.lambda / this.mu), this.K)) / this.factorial(this.K)) * ((this.K * this.mu) / ((this.K * this.mu) - this.lambda))));
     }
     factorial(n) {
         let fac = 1;

@@ -9,7 +9,7 @@ let mmk_μ = 3;
 let mmk_K = 2;      
 
 let modelo_mmk = new MMK(mmk_λ,mmk_μ,mmk_K);
-console.log(" Caracteristicas Operativas de Sistema - MODELO MM1 Finito");
+console.log(" Caracteristicas Operativas de Sistema - MODELO MMK Finito");
 console.log(" El sistema tiene capacidad "+modelo_mmk.capacidad());
 console.log(" ρ = "+modelo_mmk.ro());
 console.log(" Po = "+modelo_mmk.p0());
