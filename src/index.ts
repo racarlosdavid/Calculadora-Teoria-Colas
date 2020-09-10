@@ -39,12 +39,12 @@ console.log(" Pw = "+modelo_mg1.Pw());
 console.log("\n");
 
 //-------------> MODELO MM1 FINITO
-let mm1_λ = 0.05;   
-let mm1_μ = 0.5;    
-let mm1_N = 6;      
-let mm1_K = 1; 
+let mm1_f_λ = 0.05;   
+let mm1_f_μ = 0.5;    
+let mm1_f_N = 6;      
+let mm1_f_K = 1; 
 
-let modelo_mm1finito = new MM1Finito(mm1_λ,mm1_μ,mm1_N,mm1_K);
+let modelo_mm1finito = new MM1Finito(mm1_f_λ,mm1_f_μ,mm1_f_N,mm1_f_K);
 console.log(" Caracteristicas Operativas de Sistema - MODELO MM1 Finito");
 console.log(" El sistema tiene capacidad "+modelo_mm1finito.capacidad());
 console.log(" Po = "+modelo_mm1finito.p0());

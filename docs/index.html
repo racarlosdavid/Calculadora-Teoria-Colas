@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="codemirror-5.53.2/lib/codemirror.css" />
+    <link rel="stylesheet" href="codemirror-5.53.2/theme/base16-dark.css" />
+
+    <script type="text/javascript" src="codemirror-5.53.2/lib/codemirror.js"></script>
+    <script type="text/javascript" src="codemirror-5.53.2/addon/mode/simple.js"></script>
+    <script type="text/javascript" src="js/syntaxHighlighter.js"></script>
 
     <script src="js/tabs.js"></script>
     <script src="js/ejecutar.js"></script>
@@ -20,7 +26,7 @@
     <script src="src/MG1.js"></script>
 
 </head>
-<body >
+<body onload="setear()">
   
 <h1>Modelos</h1>
 
@@ -28,30 +34,140 @@
 <div class="tab">
   <button class="tablinksR" id="buttonMM1" onclick="mostarPestaniaR(event, 'MM1')">M/M/1</button>
   <button class="tablinksR" onclick="mostarPestaniaR(event, 'MMK')">M/M/K</button>
-  <button class="tablinksR" onclick="mostarPestaniaR(event, 'Errores')">Errores</button>
-  <button class="tablinksR" onclick="mostarPestaniaR(event, 'AST')">AST</button>
+  <button class="tablinksR" onclick="mostarPestaniaR(event, 'MG1')">M/G/1</button>
+  <button class="tablinksR" onclick="mostarPestaniaR(event, 'MM1F')">M/M/1 Finito</button>
 </div>
 
 <div id="MM1" class="tabcontentR">
-  <form>
-    <label for="mm1_λ">λ:</label><br>
-    <input type="text" id="mm1_λ" name="mm1_λ"><br>
-    <label for="mm1_μ">μ:</label><br>
-    <input type="text" id="mm1_μ" name="mm1_μ"><br>
-    <button type="button" class="m-2 btn btn-success btn-lg" onclick="mm1_infinito()">Calcular M/M/1</button> 
-  </form>
+  <div class="row">
+    <div class="col-4 mt-3">
+      <div class="card">
+        <div class="card-header">
+          <h4>Variables </h4>
+        </div>
+        <div>
+          <form>
+            <label for="mm1_λ">λ:</label><br>
+            <input type="text" id="mm1_λ" name="mm1_λ"><br>
+            <label for="mm1_μ">μ:</label><br>
+            <input type="text" id="mm1_μ" name="mm1_μ"><br>
+            <button type="button" class="m-2 btn btn-success btn-lg" onclick="mm1_infinito()">Calcular M/M/1</button> 
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-7 mt-3">
+      <div class="card">
+        <div class="card-header">
+          <h4>Resultados</h4>
+        </div>
+        <textarea class="codemirror-textarea" name="" id="code_mm1" cols="30" rows="13">
+          
+        </textarea>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div id="MMK" class="tabcontentR">
-  <form>
-    <label for="mmk_λ">λ:</label><br>
-    <input type="text" id="mmk_λ" name="mmk_λ"><br>
-    <label for="mmk_μ">μ:</label><br>
-    <input type="text" id="mmk_μ" name="mmk_μ"><br>
-    <label for="mmk_K">k:</label><br>
-    <input type="text" id="mmk_K" name="mmk_K"><br>
-    <button type="button" class="m-2 btn btn-success btn-lg" onclick="mmk()">Calcular M/M/K </button> 
-  </form>
+  <div class="row">
+    <div class="col-4 mt-3">
+      <div class="card">
+        <div class="card-header">
+          <h4>Variables </h4>
+        </div>
+        <div>
+          <form>
+            <label for="mmk_λ">λ:</label><br>
+            <input type="text" id="mmk_λ" name="mmk_λ"><br>
+            <label for="mmk_μ">μ:</label><br>
+            <input type="text" id="mmk_μ" name="mmk_μ"><br>
+            <label for="mmk_K">k:</label><br>
+            <input type="text" id="mmk_K" name="mmk_K"><br>
+            <button type="button" class="m-2 btn btn-success btn-lg" onclick="mmk()">Calcular M/M/K </button> 
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-7 mt-3">
+      <div class="card">
+        <div class="card-header">
+          <h4>Resultados</h4>
+        </div>
+        <textarea class="codemirror-textarea" name="" id="code_mmk" cols="30" rows="13">
+          
+        </textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="MG1" class="tabcontentR">
+  <div class="row">
+    <div class="col-4 mt-3">
+      <div class="card">
+        <div class="card-header">
+          <h4>Variables </h4>
+        </div>
+        <div>
+          <form>
+            <label for="mg1_λ">λ:</label><br>
+            <input type="text" id="mg1_λ" name="mg1_λ"><br>
+            <label for="mg1_μ">μ:</label><br>
+            <input type="text" id="mg1_μ" name="mg1_μ"><br>
+            <label for="mg1_σ">σ:</label><br>
+            <input type="text" id="mg1_σ" name="mg1_σ"><br>
+            <button type="button" class="m-2 btn btn-success btn-lg" onclick="mg1()">Calcular M/G/1 </button> 
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-7 mt-3">
+      <div class="card">
+        <div class="card-header">
+          <h4>Resultados</h4>
+        </div>
+        <textarea class="codemirror-textarea" name="" id="code_mg1" cols="30" rows="13">
+          
+        </textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="MM1F" class="tabcontentR">
+  <div class="row">
+    <div class="col-4 mt-3">
+      <div class="card">
+        <div class="card-header">
+          <h4>Variables </h4>
+        </div>
+        <div>
+          <form>
+            <label for="mm1_f_λ">λ:</label><br>
+            <input type="text" id="mm1_f_λ" name="mm1_f_λ"><br>
+            <label for="mm1_f_μ">μ:</label><br>
+            <input type="text" id="mm1_f_μ" name="mm1_f_μ"><br>
+            <label for="mm1_f_N">N:</label><br>
+            <input type="text" id="mm1_f_N" name="mm1_f_N"><br> 
+            <label for="mm1_f_K">K:</label><br>
+            <input type="text" id="mm1_f_K" name="mm1_f_K"><br> 
+            <button type="button" class="m-2 btn btn-success btn-lg" onclick="mm1_finito()">Calcular M/M/1 Finito </button> 
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-7 mt-3">
+      <div class="card">
+        <div class="card-header">
+          <h4>Resultados</h4>
+        </div>
+        <textarea class="codemirror-textarea" name="" id="code_mmm1_f" cols="30" rows="13">
+          
+        </textarea>
+      </div>
+    </div>
+  </div>
 </div>
 
 
