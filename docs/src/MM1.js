@@ -9,7 +9,7 @@ class MM1 {
         return "no";
     }
     ro() {
-        return 0;
+        return this.lambda / this.mu;
     }
     p0() {
         return 1 - (this.lambda / this.mu);
@@ -31,5 +31,11 @@ class MM1 {
     }
     Pw() {
         return this.lambda / this.mu;
+    }
+    P_Wq_mayor(t) {
+        return (this.lambda / this.mu) * (Math.pow(Math.E, (-this.mu * t * (1 - (this.lambda / this.mu)))));
+    }
+    P_w_mayor(t) {
+        return Math.pow(Math.E, (-this.mu * t * (1 - (this.lambda / this.mu))));
     }
 }

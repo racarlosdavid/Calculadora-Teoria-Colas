@@ -38,12 +38,32 @@ class MMK {
     W() {
         return this.Wq() + (1 / this.mu);
     }
-    /*
-        Pn(n:number):number{
-            
+    Pn(n) {
+        let res = 0;
+        if (n <= this.K) {
+            res = ((Math.pow((this.lambda / this.mu), n)) / this.factorial(n)) * this.p0();
         }
-    */
+        else if (n > this.K) {
+            res = ((Math.pow((this.lambda / this.mu), n)) / (this.factorial(this.K) * (Math.pow(this.K, (n - this.K))))) * this.p0();
+        }
+        return res;
+    }
     Pw() {
         return (1 / this.factorial(this.K)) * (Math.pow((this.lambda / this.mu), this.K)) * ((this.K * this.mu) / ((this.K * this.mu) - this.lambda)) * this.p0();
+    }
+    P_Wq_igual(n) {
+        let sumatoria = 0;
+        for (let i = 0; i < this.K; i++) {
+            sumatoria += this.Pn(n);
+        }
+        return sumatoria;
+    }
+    P_Wq_mayor(n, t) {
+        return (1 - this.P_Wq_igual(n)) * (Math.pow(Math.E, ((-this.K * this.mu * t) * (1 - (this.lambda / (this.K * this.mu))))));
+    }
+    P_w_mayor(t) {
+        //return (Math.E**(-this.mu*t))*(1+((((this.lambda/this.mu)**this.K)*this.p0()*(1-(Math.E**(-this.mu*t*(this.K-1-(this.lambda/this.mu))))))/(this.factorial(this.K)*(1-(this.lambda/(this.K*this.mu)))*(this.K-1-(this.lambda/this.mu)))))
+        //lo de los corchetes forma parte 
+        return (Math.pow(Math.E, (-this.mu * t * (1 + (((Math.pow((this.lambda / this.mu), this.K)) * this.p0() * (1 - (Math.pow(Math.E, (-this.mu * t * (this.K - 1 - (this.lambda / this.mu))))))) / (this.factorial(this.K) * (1 - (this.lambda / (this.K * this.mu))) * (this.K - 1 - (this.lambda / this.mu))))))));
     }
 }

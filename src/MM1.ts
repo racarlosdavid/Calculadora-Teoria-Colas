@@ -7,14 +7,14 @@ export class MM1 {
         this.mu = mu;
     }
 
-    capacidad():string{ //ρ
+    capacidad():string{ 
         if(this.ro() < 1)
             return "si";
         return "no";
     }
 
     ro():number{
-        return 0
+        return this.lambda/this.mu;
     }
 
     p0():number{
@@ -42,7 +42,15 @@ export class MM1 {
     }
 
     Pw():number{
-        return this.lambda/this.mu
+        return this.lambda/this.mu;
+    }
+
+    P_Wq_mayor(t:number):number{
+        return (this.lambda/this.mu)*(Math.E**(-this.mu*t*(1-(this.lambda/this.mu))));
+    }
+
+    P_w_mayor(t:number):number{
+        return Math.E**(-this.mu*t*(1-(this.lambda/this.mu)));
     }
     
 }

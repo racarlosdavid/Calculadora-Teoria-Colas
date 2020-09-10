@@ -1,6 +1,27 @@
-import { MM1Finito } from "./MM1Finito";
+import { MM1 } from "./MM1";
 import { MMK } from "./MMK";
 import { MG1 } from "./MG1";
+import { MM1Finito } from "./MM1Finito";
+
+
+//-------------> MODELO MM1
+
+let mm1_λ = 12;   
+let mm1_μ = 15;       
+
+let modelo_mm1 = new MM1(mm1_λ,mm1_μ);
+console.log(" Caracteristicas Operativas de Sistema - MODELO MM1 Infinito");
+console.log(" El sistema tiene capacidad "+modelo_mm1.capacidad());
+console.log(" ρ = "+modelo_mm1.ro());
+console.log(" Po = "+modelo_mm1.p0());
+console.log(" Lq = "+modelo_mm1.Lq());
+console.log(" L = "+modelo_mm1.L());
+console.log(" Wq = "+modelo_mm1.Wq());
+console.log(" W = "+modelo_mm1.W());
+console.log(" Pw = "+modelo_mm1.Pw());
+console.log("\n");
+     
+//-------------> MODELO MG1
 
 //-------------> MODELO MMK
 
