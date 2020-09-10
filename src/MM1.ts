@@ -20,7 +20,6 @@ export class MM1 {
     p0():number{
         return 1 - (this.lambda/this.mu);
     }
-    
 
     Lq():number{
        return  (this.lambda**2)/(this.mu*(this.mu-this.lambda));
