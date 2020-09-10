@@ -12,7 +12,7 @@ function mm1_infinito(){
         let modelo_mm1 = new MM1(mm1_λ,mm1_μ);
         let salida = "";
         salida += " Caracteristicas Operativas de Sistema - MODELO MM1 Infinito"+"\n";
-        salida += " El sistema tiene capacidad "+modelo_mm1.capacidad()+"\n";
+        salida += " El sistema tiene capacidad: "+modelo_mm1.capacidad()+"\n";
         salida += " ρ = "+modelo_mm1.ro()+"\n";
         salida += " Po = "+modelo_mm1.p0()+"\n";
         salida += " Lq = "+modelo_mm1.Lq()+"\n";
@@ -57,7 +57,7 @@ function mmk(){
 
         let salida = "";
         salida += " Caracteristicas Operativas de Sistema - MODELO MMK"+"\n";
-        salida += " El sistema tiene capacidad "+modelo_mmk.capacidad()+"\n";
+        salida += " El sistema tiene capacidad: "+modelo_mmk.capacidad()+"\n";
         salida += " ρ = "+modelo_mmk.ro()+"\n";
         salida += " Po = "+modelo_mmk.p0()+"\n";
         salida += " Lq = "+modelo_mmk.Lq()+"\n";
@@ -106,7 +106,7 @@ function mg1(){
 
         let salida = "";
         salida += " Caracteristicas Operativas de Sistema - MODELO MG1"+"\n";
-        salida += " El sistema tiene capacidad "+modelo_mg1.capacidad()+"\n";
+        salida += " El sistema tiene capacidad: "+modelo_mg1.capacidad()+"\n";
         salida += " ρ = "+modelo_mg1.ro()+"\n";
         salida += " Po = "+modelo_mg1.p0()+"\n";
         salida += " Lq = "+modelo_mg1.Lq()+"\n";
@@ -140,7 +140,7 @@ function mm1_finito(){
 
         let salida = "";
         salida += " Caracteristicas Operativas de Sistema - MODELO MM1 Finito\n";
-        salida += " El sistema tiene capacidad "+modelo_mm1finito.capacidad()+"\n";
+        salida += " El sistema tiene capacidad: "+modelo_mm1finito.capacidad()+"\n";
         salida += " Po = "+modelo_mm1finito.p0()+"\n";
         salida += " Lq = "+modelo_mm1finito.Lq()+"\n";
         salida += " L = "+modelo_mm1finito.L()+"\n";

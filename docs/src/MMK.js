@@ -62,8 +62,9 @@ class MMK {
         return (1 - this.P_Wq_igual(n)) * (Math.pow(Math.E, ((-this.K * this.mu * t) * (1 - (this.lambda / (this.K * this.mu))))));
     }
     P_w_mayor(t) {
+        //lo de los corchetes no forma parte del exponente
         //return (Math.E**(-this.mu*t))*(1+((((this.lambda/this.mu)**this.K)*this.p0()*(1-(Math.E**(-this.mu*t*(this.K-1-(this.lambda/this.mu))))))/(this.factorial(this.K)*(1-(this.lambda/(this.K*this.mu)))*(this.K-1-(this.lambda/this.mu)))))
-        //lo de los corchetes forma parte 
+        //lo de los corchetes forma parte de exponente
         return (Math.pow(Math.E, (-this.mu * t * (1 + (((Math.pow((this.lambda / this.mu), this.K)) * this.p0() * (1 - (Math.pow(Math.E, (-this.mu * t * (this.K - 1 - (this.lambda / this.mu))))))) / (this.factorial(this.K) * (1 - (this.lambda / (this.K * this.mu))) * (this.K - 1 - (this.lambda / this.mu))))))));
     }
 }
