@@ -56,7 +56,7 @@ function mmk(){
         let modelo_mmk = new MMK(mmk_λ,mmk_μ,mmk_K);
 
         let salida = "";
-        salida += " Caracteristicas Operativas de Sistema - MODELO MM1 Finito"+"\n";
+        salida += " Caracteristicas Operativas de Sistema - MODELO MMK"+"\n";
         salida += " El sistema tiene capacidad "+modelo_mmk.capacidad()+"\n";
         salida += " ρ = "+modelo_mmk.ro()+"\n";
         salida += " Po = "+modelo_mmk.p0()+"\n";
