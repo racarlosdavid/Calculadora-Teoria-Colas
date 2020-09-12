@@ -33,12 +33,12 @@ function setear() {
   editor.setSize(null,300);
   textMap.set("code_mmm1_f",editor);
 
-  var editor = CodeMirror.fromTextArea(document.getElementById("code_mgk_b"),{
+  var editor5 = CodeMirror.fromTextArea(document.getElementById("code_mgk_b"),{
       lineNumbers : true,
       mode: "modo",
       theme : "base16-dark",
   });
-  editor.setSize(null,300);
-  textMap.set("code_mgk_b",editor);
+  editor5.setSize(null,300);
+  textMap.set("code_mgk_b",editor5);
 
 }
