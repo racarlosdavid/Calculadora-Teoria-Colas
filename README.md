@@ -1,2 +1,2 @@
 # Calculadora-Teoria-Colas
-# Link de la pagina desplegada: https://racarlosdavid.github.io/Calculadora-Teoria-Colas/
+# Pueden probar la calculadora en: https://racarlosdavid.github.io/Calculadora-Teoria-Colas/
