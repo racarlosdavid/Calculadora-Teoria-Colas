@@ -12,7 +12,7 @@ git clone https://github.com/racarlosdavid/EjemploRSyntaxTextArea.git
 ```
 
 ### Calculadora Online
-Puedes probar la calculadora en linea esta disponible en:
+Puedes probar la calculadora en linea, esta disponible en:
 ```
 https://racarlosdavid.github.io/Calculadora-Teoria-Colas/
 ```
