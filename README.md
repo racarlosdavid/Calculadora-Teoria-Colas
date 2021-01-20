@@ -1,6 +1,6 @@
 # Calculadora-Teoria-Colas
 ## Descripción
-En este repositorio encontrarás una calculadora para los modelos M/M/1, M/M/K, M/G/1, M/M/1 Finito y M/G/K bloqueado el codigo fuente se encuentra en la carpeta docs, espero que te sea de utilidad.
+En este repositorio encontrarás una calculadora para los modelos M/M/1, M/M/K, M/G/1, M/M/1 Finito y M/G/K bloqueado, el codigo fuente se encuentra en la carpeta docs, espero que te sea de utilidad.
 ## Herramientas Utilizadas
 - [ JavaScript ]()
 - [ Codemirror 5.53.2 ](https://codemirror.net/)
